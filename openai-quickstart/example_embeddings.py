@@ -1,14 +1,16 @@
 """
-Example: Generate embeddings for patent text using Azure OpenAI
+Example: Generate batch embeddings for patent text using Azure OpenAI
 """
 
 import os
-
+import pandas as pd 
 from dotenv import load_dotenv
 from openai import AzureOpenAI
 
 # Load environment variables from the .env file
 load_dotenv()
+
+#df = pd.read_csv("data/intern_1_nestle_patents.csv")
 
 # Initialize Azure OpenAI client
 client = AzureOpenAI(
@@ -18,12 +20,14 @@ client = AzureOpenAI(
 )
 
 # Example patent texts, stored in a list for batch processing
+
 patent_texts = [
     "A method for packaging food products using biodegradable materials",
     "System and apparatus for beverage carbonation and dispensing",
     "Novel chocolate manufacturing process with improved texture",
 ]
 
+#patent_texts = df['title'].astype(str).tolist()
 # Generate embeddings for each patent text individually
 print("Generating embeddings for individual patent texts...")
 for i, text in enumerate(patent_texts, 1):
