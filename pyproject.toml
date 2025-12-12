@@ -3,9 +3,11 @@ name = "micro-internship-2025-winter"
 version = "1.0.0"
 requires-python = ">=3.10"
 dependencies = [
+    "streamlit>=1.40.0",
+    "plotly>=5.0.0",
+    "scikit-learn>=1.3.0",
     "openai>=1.0.0",
     "numpy>=1.24.0",
     "pandas>=2.0.0",
     "python-dotenv>=1.0.0",
-    "ipykernel>=7.1.0",
 ]
